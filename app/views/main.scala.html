@@ -1,0 +1,36 @@
+@(projects: List[Project], user: User)(body: Html)
+
+<html>
+    <head>
+        <title>boards</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-play-1.7.1.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+        <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+    </head>
+    <body>
+        <header>
+            <a href="@routes.Projects.index">Boards</a>
+            <dl id="user">
+                <dt>@user.name <span>(@user.email)</span></dt>
+                <dd>
+                    <a href="@routes.Application.logout()">Logout</a>
+                </dd>
+            </dl>
+        </header>
+      
+        <section id="main">
+
+               <ul id="projects">
+                        @views.html.projects.group(projects)
+   
+                </ul>
+            
+        </section>
+    </body>
+</html>
+

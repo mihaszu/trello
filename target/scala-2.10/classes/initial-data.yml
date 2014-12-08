@@ -1,0 +1,67 @@
+
+# Users
+
+users:
+
+    - !!models.User
+        email:      play1@sample.com
+        name:       play 1
+        password:   play
+    
+    - !!models.User
+        email:      play2@sample.com
+        name:       play2 2
+        password:   play
+    
+
+    
+# Projects
+
+projects:
+
+    - !!models.Project
+        id:         1
+        name:       Play 2.0   
+        folder:     Play framework
+        members:
+            - !!models.User
+                email: play1@sample.com
+            - !!models.User
+                email: play2@sample.com
+
+
+    - !!models.Project
+        id:         2
+        name:       Play 1.2.4
+        folder:     Play framework
+        members:
+            - !!models.User
+                email: play1@sample.com
+            - !!models.User
+                email: play2@sample.com
+                
+
+# Task
+
+tasks:
+    
+    - !!models.Task
+        title:      Fix the documentation
+        done:       false
+        folder:     Todo
+        project:    !!models.Project
+                        id: 1
+        assignedTo: !!models.User
+                        email: play1@sample.com
+                        
+    - !!models.Task
+        title:      Prepare the beta release
+        done:       false
+        folder:     Urgent
+        dueDate:    2011-11-15
+        project:    !!models.Project
+                        id: 1
+        assignedTo: !!models.User
+                        email: play2@sample.com
+
+ 

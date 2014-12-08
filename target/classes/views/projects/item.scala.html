@@ -1,0 +1,5 @@
+@(project: Project)
+
+<li data-project="@project.id">
+    <a class="name" href="#@routes.Tasks.index(project.id)">@project.name</a>
+</li>

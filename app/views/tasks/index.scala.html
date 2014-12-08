@@ -1,0 +1,12 @@
+@(project: Project, tasks: List[Task])
+
+
+<article  class="tasks" id="tasks">
+    @tasks.groupBy(_.folder).map {
+        case (folder, tasks) => {
+            @views.html.tasks.folder(folder, tasks)
+        }
+    }
+    <a href="#newFolder" class="new newFolder">add a list</a>
+</article>
+

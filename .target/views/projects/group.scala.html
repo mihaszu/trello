@@ -1,0 +1,11 @@
+@(projects: List[Project])
+
+<li data-group="@group">
+	
+    <ul>
+        @projects.map { project =>
+            @views.html.projects.item(project)
+        }
+    </ul>
+    <button class="newProject">New board</button>
+</li>
